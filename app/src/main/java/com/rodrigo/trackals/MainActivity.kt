@@ -14,10 +14,13 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.rodrigo.core.navigation.Route
+import com.rodrigo.onboarding_presentation.gender.GenderScreen
 import com.rodrigo.onboarding_presentation.welcome.WelcomeScreen
 import com.rodrigo.trackals.navigation.navigate
 import com.rodrigo.trackals.ui.theme.TrackalsTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,13 +34,13 @@ class MainActivity : ComponentActivity() {
                     composable(Route.WELCOME) {
                        WelcomeScreen(onNavigate = navController::navigate)
                     }
+                    composable(Route.GENDER) {
+                          GenderScreen(onNavigate = navController::navigate)
+                    }
                     composable(Route.ACTIVITY) {
 
                     }
                     composable(Route.AGE) {
-
-                    }
-                    composable(Route.GENDER) {
 
                     }
                     composable(Route.HEIGHT) {
