@@ -17,6 +17,7 @@ import com.rodrigo.onboarding_presentation.age.AgeScreen
 import com.rodrigo.onboarding_presentation.gender.GenderScreen
 import com.rodrigo.onboarding_presentation.goal.GoalScreen
 import com.rodrigo.onboarding_presentation.height.HeightScreen
+import com.rodrigo.onboarding_presentation.nutrient_goal.NutrientGoalScreen
 import com.rodrigo.onboarding_presentation.weight.WeightScreen
 import com.rodrigo.onboarding_presentation.welcome.WelcomeScreen
 import com.rodrigo.trackals.navigation.navigate
@@ -61,7 +62,7 @@ class MainActivity : ComponentActivity() {
                             GoalScreen(onNavigate = navController::navigate)
                         }
                         composable(Route.NUTRIENT_GOAL) {
-
+                            NutrientGoalScreen(scaffoldState = scaffoldState, onNavigate = navController::navigate)
                         }
                         composable(Route.TRACKER_OVERVIEW) {
 

@@ -6,6 +6,7 @@ import android.content.SharedPreferences
 import com.rodrigo.core.data.preferences.DefaultPreferences
 import com.rodrigo.core.domain.preferences.Preferences
 import com.rodrigo.core.domain.use_case.FilterOutDigits
+import com.rodrigo.onboarding_domain.use_case.ValidateNutrients
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
