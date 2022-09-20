@@ -14,6 +14,8 @@ import androidx.navigation.compose.rememberNavController
 import com.rodrigo.core.navigation.Route
 import com.rodrigo.onboarding_presentation.age.AgeScreen
 import com.rodrigo.onboarding_presentation.gender.GenderScreen
+import com.rodrigo.onboarding_presentation.height.HeightScreen
+import com.rodrigo.onboarding_presentation.weight.WeightScreen
 import com.rodrigo.onboarding_presentation.welcome.WelcomeScreen
 import com.rodrigo.trackals.navigation.navigate
 import com.rodrigo.trackals.ui.theme.TrackalsTheme
@@ -44,19 +46,19 @@ class MainActivity : ComponentActivity() {
                         composable(Route.AGE) {
                             AgeScreen(scaffoldState = scaffoldState, onNavigate = navController::navigate)
                         }
+                        composable(Route.HEIGHT) {
+                            HeightScreen(scaffoldState = scaffoldState, onNavigate = navController::navigate)
+                        }
+                        composable(Route.WEIGHT) {
+                            WeightScreen(scaffoldState = scaffoldState, onNavigate = navController::navigate)
+                        }
                         composable(Route.ACTIVITY) {
 
                         }
-                        composable(Route.HEIGHT) {
-
-                        }
-                        composable(Route.WEIGHT) {
+                        composable(Route.GOAL) {
 
                         }
                         composable(Route.NUTRIENT_GOAL) {
-
-                        }
-                        composable(Route.GOAL) {
 
                         }
                         composable(Route.TRACKER_OVERVIEW) {
