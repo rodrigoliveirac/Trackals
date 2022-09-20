@@ -26,7 +26,7 @@ fun UnitTextField(
 ) {
     val spacing = LocalSpacing.current
     Row(
-        modifier = Modifier,
+        modifier = modifier,
         horizontalArrangement = Arrangement.Center,
     ) {
         BasicTextField(
@@ -37,14 +37,14 @@ fun UnitTextField(
                 keyboardType = KeyboardType.Number
             ),
             singleLine = true,
-            modifier = Modifier
+            modifier = modifier
                 .width(IntrinsicSize.Min)
                 .alignBy(LastBaseline)
         )
-        Spacer(modifier = Modifier.width(spacing.spaceSmall))
+        Spacer(modifier = modifier.width(spacing.spaceSmall))
         Text(
             text = unit,
-            modifier = Modifier.alignBy(LastBaseline)
+            modifier = modifier.alignBy(LastBaseline)
         )
     }
 }
