@@ -1,5 +1,8 @@
 package com.rodrigo.tracker_data.di
 
+import android.app.Application
+import androidx.room.Room
+import com.rodrigo.tracker_data.local.TrackerDatabase
 import com.rodrigo.tracker_data.remote.OpenFoodApi
 import com.rodrigo.tracker_data.remote.OpenFoodApi.Companion.BASE_URL
 import dagger.Module
@@ -39,4 +42,15 @@ object TrackerDataModule {
             .build()
             .create()
     }
+
+    @Provides
+    @Singleton
+    fun provideTrackerDatabase(app: Application): TrackerDatabase {
+        return Room.databaseBuilder(
+            app,
+            TrackerDatabase::class.java,
+            "tracker_db"
+        ).build()
+    }
+
 }
