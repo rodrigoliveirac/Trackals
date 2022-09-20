@@ -12,8 +12,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.rodrigo.core.navigation.Route
+import com.rodrigo.onboarding_presentation.activity_level.ActivityLevelScreen
 import com.rodrigo.onboarding_presentation.age.AgeScreen
 import com.rodrigo.onboarding_presentation.gender.GenderScreen
+import com.rodrigo.onboarding_presentation.goal.GoalScreen
 import com.rodrigo.onboarding_presentation.height.HeightScreen
 import com.rodrigo.onboarding_presentation.weight.WeightScreen
 import com.rodrigo.onboarding_presentation.welcome.WelcomeScreen
@@ -53,10 +55,10 @@ class MainActivity : ComponentActivity() {
                             WeightScreen(scaffoldState = scaffoldState, onNavigate = navController::navigate)
                         }
                         composable(Route.ACTIVITY) {
-
+                            ActivityLevelScreen(onNavigate = navController::navigate)
                         }
                         composable(Route.GOAL) {
-
+                            GoalScreen(onNavigate = navController::navigate)
                         }
                         composable(Route.NUTRIENT_GOAL) {
 
