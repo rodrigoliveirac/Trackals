@@ -5,7 +5,7 @@ import com.rodrigo.tracker_domain.model.TrackedFood
 import kotlinx.coroutines.flow.Flow
 import java.time.LocalDate
 
-interface TrackerRepository {
+interface  TrackerRepository {
 
     suspend fun searchFood(
         query: String,
@@ -17,5 +17,5 @@ interface TrackerRepository {
 
     suspend fun deleteTrackedFood(food: TrackedFood)
 
-    suspend fun getFoodsForDate(localDate: LocalDate) : Flow<List<TrackedFood>>
+    fun getFoodsForDate(localDate: LocalDate) : Flow<List<TrackedFood>>
 }
