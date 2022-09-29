@@ -1,4 +1,4 @@
-package com.rodrigo.trackals.ui.theme
+package com.rodrigo.core_ui
 
 import androidx.compose.ui.graphics.Color
 

@@ -22,6 +22,7 @@ import com.rodrigo.onboarding_presentation.weight.WeightScreen
 import com.rodrigo.onboarding_presentation.welcome.WelcomeScreen
 import com.rodrigo.trackals.navigation.navigate
 import com.rodrigo.trackals.ui.theme.TrackalsTheme
+import com.rodrigo.tracker_presentation.tracker_overview.TrackerOverviewScreen
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -47,13 +48,22 @@ class MainActivity : ComponentActivity() {
                             GenderScreen(onNavigate = navController::navigate)
                         }
                         composable(Route.AGE) {
-                            AgeScreen(scaffoldState = scaffoldState, onNavigate = navController::navigate)
+                            AgeScreen(
+                                scaffoldState = scaffoldState,
+                                onNavigate = navController::navigate
+                            )
                         }
                         composable(Route.HEIGHT) {
-                            HeightScreen(scaffoldState = scaffoldState, onNavigate = navController::navigate)
+                            HeightScreen(
+                                scaffoldState = scaffoldState,
+                                onNavigate = navController::navigate
+                            )
                         }
                         composable(Route.WEIGHT) {
-                            WeightScreen(scaffoldState = scaffoldState, onNavigate = navController::navigate)
+                            WeightScreen(
+                                scaffoldState = scaffoldState,
+                                onNavigate = navController::navigate
+                            )
                         }
                         composable(Route.ACTIVITY) {
                             ActivityLevelScreen(onNavigate = navController::navigate)
@@ -62,10 +72,13 @@ class MainActivity : ComponentActivity() {
                             GoalScreen(onNavigate = navController::navigate)
                         }
                         composable(Route.NUTRIENT_GOAL) {
-                            NutrientGoalScreen(scaffoldState = scaffoldState, onNavigate = navController::navigate)
+                            NutrientGoalScreen(
+                                scaffoldState = scaffoldState,
+                                onNavigate = navController::navigate
+                            )
                         }
                         composable(Route.TRACKER_OVERVIEW) {
-
+                            TrackerOverviewScreen(onNavigate = navController::navigate)
                         }
                         composable(Route.SEARCH) {
 
