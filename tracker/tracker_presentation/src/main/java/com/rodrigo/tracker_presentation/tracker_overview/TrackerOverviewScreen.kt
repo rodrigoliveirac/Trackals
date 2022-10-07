@@ -13,8 +13,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.rodrigo.core.util.UiEvent
 import com.rodrigo.core_ui.LocalSpacing
-import com.rodrigo.tracker_presentation.R
-import com.rodrigo.tracker_presentation.components.DaySelector
+import com.rodrigo.tracker_presentation.tracker_overview.components.DaySelector
 import com.rodrigo.tracker_presentation.tracker_overview.TrackerOverviewEvent.*
 import com.rodrigo.tracker_presentation.tracker_overview.components.AddButton
 import com.rodrigo.tracker_presentation.tracker_overview.components.ExpandableMeal

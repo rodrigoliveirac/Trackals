@@ -1,4 +1,4 @@
-package com.rodrigo.tracker_presentation.components
+package com.rodrigo.tracker_presentation.tracker_overview.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -13,8 +13,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import com.rodrigo.tracker_presentation.R
-import com.rodrigo.tracker_presentation.tracker_overview.components.ParseDateText
 import java.time.LocalDate
 
 @Composable
@@ -38,7 +36,7 @@ fun DaySelector(
            )
         }
         Text(
-            text = ParseDateText(date = date),
+            text = parseDateText(date = date),
             style = MaterialTheme.typography.h2
         )
         IconButton(

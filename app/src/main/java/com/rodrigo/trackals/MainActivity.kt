@@ -14,6 +14,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.rodrigo.core.domain.preferences.Preferences
 import com.rodrigo.core.navigation.Route
 import com.rodrigo.onboarding_presentation.activity_level.ActivityLevelScreen
 import com.rodrigo.onboarding_presentation.age.AgeScreen
@@ -28,17 +29,20 @@ import com.rodrigo.trackals.ui.theme.TrackalsTheme
 import com.rodrigo.tracker_presentation.search.SearchScreen
 import com.rodrigo.tracker_presentation.tracker_overview.TrackerOverviewScreen
 import dagger.hilt.android.AndroidEntryPoint
-import java.net.URLEncoder
-import java.nio.charset.StandardCharsets
+import javax.inject.Inject
 
 @ExperimentalComposeUiApi
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
-    companion object {
-        const val YOUR_URL = Route.SEARCH + "/{mealName}/{dayOfMonth}/{month}/{year}"
-    }
+
+    @Inject
+    lateinit var preferences: Preferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val shouldShowOnboarding = preferences.loadShouldShowOnboarding()
+
         setContent {
             TrackalsTheme {
                 val navController = rememberNavController()
@@ -49,10 +53,10 @@ class MainActivity : ComponentActivity() {
                 ) {
                     NavHost(
                         navController = navController,
-                        startDestination = Route.WELCOME
+                        startDestination = if (shouldShowOnboarding) Route.WELCOME else Route.TRACKER_OVERVIEW
                     ) {
                         composable(Route.WELCOME) {
-                            WelcomeScreen(onNavigate = navController::navigate)
+                            WelcomeScreen(onNextClick = navController::navigate)
                         }
                         composable(Route.GENDER) {
                             GenderScreen(onNavigate = navController::navigate)
@@ -92,9 +96,8 @@ class MainActivity : ComponentActivity() {
                             TrackerOverviewScreen(onNavigate = navController::navigate)
                         }
 
-                        URLEncoder.encode(YOUR_URL, StandardCharsets.UTF_8.toString())
                         composable(
-                            route = YOUR_URL,
+                            route = Route.SEARCH + "/{mealName}/{dayOfMonth}/{month}/{year}",
                             arguments = listOf(
                                 navArgument("mealName") {
                                     type = NavType.StringType
