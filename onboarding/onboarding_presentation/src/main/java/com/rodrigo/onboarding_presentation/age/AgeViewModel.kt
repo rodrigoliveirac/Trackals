@@ -5,12 +5,11 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.rodrigo.core.R
 import com.rodrigo.core.domain.preferences.Preferences
 import com.rodrigo.core.domain.use_case.FilterOutDigits
-import com.rodrigo.core.navigation.Route
 import com.rodrigo.core.util.UiEvent
 import com.rodrigo.core.util.UiText
-import com.rodrigo.core.R
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.receiveAsFlow
@@ -46,7 +45,7 @@ class AgeViewModel @Inject constructor(
                 return@launch
             }
             preferences.saveAge(ageValue)
-            _uiEvent.send(UiEvent.Navigate(Route.HEIGHT))
+            _uiEvent.send(UiEvent.Success)
         }
     }
 

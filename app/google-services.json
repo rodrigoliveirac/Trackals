@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "710107596320",
+    "project_id": "trackals",
+    "storage_bucket": "trackals.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:710107596320:android:8f772a57861f659cd4de45",
+        "android_client_info": {
+          "package_name": "com.rodrigo.trackals"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "710107596320-f0thupmqeklpfpf2k6pgf5ufjf0j0p74.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvW4wBYGXkfXPu-eWqWof1O8M8ov-PXUs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "710107596320-f0thupmqeklpfpf2k6pgf5ufjf0j0p74.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

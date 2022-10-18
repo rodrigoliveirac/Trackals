@@ -5,12 +5,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.rodrigo.core.R
 import com.rodrigo.core.domain.preferences.Preferences
 import com.rodrigo.core.domain.use_case.FilterOutDigits
-import com.rodrigo.core.navigation.Route
 import com.rodrigo.core.util.UiEvent
-import com.rodrigo.core.util.UiText
 import com.rodrigo.onboarding_domain.use_case.ValidateNutrients
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
@@ -52,7 +49,7 @@ class NutrientGoalViewModel @Inject constructor(
                             preferences.saveProteinRatio(result.proteinRatio)
                             preferences.saveFatRatio(result.fatRatio)
                             viewModelScope.launch {
-                                _uiEvent.send(UiEvent.Navigate(Route.TRACKER_OVERVIEW))
+                                _uiEvent.send(UiEvent.Success)
                             }
                         }
                         is ValidateNutrients.Result.Error -> {

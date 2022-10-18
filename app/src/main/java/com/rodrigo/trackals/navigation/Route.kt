@@ -1,4 +1,4 @@
-package com.rodrigo.core.navigation
+package com.rodrigo.trackals.navigation
 
 object Route {
     const val WELCOME = "welcome"
