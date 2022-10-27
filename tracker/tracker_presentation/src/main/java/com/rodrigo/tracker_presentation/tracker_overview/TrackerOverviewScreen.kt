@@ -1,24 +1,17 @@
 package com.rodrigo.tracker_presentation.tracker_overview
 
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.rodrigo.core.util.UiEvent
 import com.rodrigo.core_ui.LocalSpacing
-import com.rodrigo.tracker_presentation.tracker_overview.components.DaySelector
+import com.rodrigo.tracker_domain.model.MealType
 import com.rodrigo.tracker_presentation.tracker_overview.TrackerOverviewEvent.*
-import com.rodrigo.tracker_presentation.tracker_overview.components.AddButton
-import com.rodrigo.tracker_presentation.tracker_overview.components.ExpandableMeal
-import com.rodrigo.tracker_presentation.tracker_overview.components.NutrientsHeader
-import com.rodrigo.tracker_presentation.tracker_overview.components.TrackedFoodItem
+import com.rodrigo.tracker_presentation.tracker_overview.components.*
 
 @Composable
 fun TrackerOverviewScreen(
@@ -74,7 +67,7 @@ fun TrackerOverviewScreen(
                             ),
                             onClick = {
                                 onNavigateToSearch(
-                                    meal.name.asString(context),
+                                    meal.mealType.name,
                                     state.date.dayOfMonth,
                                     state.date.monthValue,
                                     state.date.year

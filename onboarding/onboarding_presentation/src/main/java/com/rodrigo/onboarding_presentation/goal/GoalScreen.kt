@@ -51,7 +51,7 @@ fun GoalScreen(
             Spacer(modifier = Modifier.height(spacing.spaceMedium))
             Row {
                 SelectableButton(
-                    text = stringResource(id = R.string.low),
+                    text = stringResource(id =R.string.lose),
                     isSelected = viewModel.selectedGoalType is GoalType.LoseWeight,
                     color = MaterialTheme.colors.primaryVariant,
                     selectedTextColor = Color.White,
@@ -64,7 +64,7 @@ fun GoalScreen(
                 )
                 Spacer(modifier = Modifier.width(spacing.spaceMedium))
                 SelectableButton(
-                    text = stringResource(id = R.string.medium),
+                    text = stringResource(id = R.string.keep),
                     isSelected = viewModel.selectedGoalType is GoalType.KeepWeight,
                     color = MaterialTheme.colors.primaryVariant,
                     selectedTextColor = Color.White,
@@ -78,7 +78,7 @@ fun GoalScreen(
 
                 Spacer(modifier = Modifier.width(spacing.spaceMedium))
                 SelectableButton(
-                    text = stringResource(id = R.string.high),
+                    text = stringResource(id = R.string.gain),
                     isSelected = viewModel.selectedGoalType is GoalType.GainWeight,
                     color = MaterialTheme.colors.primaryVariant,
                     selectedTextColor = Color.White,

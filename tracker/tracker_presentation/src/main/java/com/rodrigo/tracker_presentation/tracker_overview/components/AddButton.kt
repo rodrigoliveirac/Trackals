@@ -19,6 +19,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.rodrigo.core.R.string.add
 import com.rodrigo.core_ui.LocalSpacing
+import com.rodrigo.tracker_domain.model.MealType
 
 @Composable
 fun AddButton(
