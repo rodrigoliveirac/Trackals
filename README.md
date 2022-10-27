@@ -15,7 +15,7 @@ Save your meals and never forget it 😀
  
 <img src="https://github.com/rodrigoliveirac/Trackals/blob/master/screenshots/Screen_Recording_20221027_092213_Trackals_AdobeExpress.gif" width="188" height="412">
 
-> Save your.
+> To track your daily goal calories.
  
 <img src="https://github.com/rodrigoliveirac/Trackals/blob/master/screenshots/Screen_Recording_20221027_092317_Trackals_AdobeExpress.gif" width="188" height="412">
 	
